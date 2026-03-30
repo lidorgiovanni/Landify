@@ -18,7 +18,7 @@ const Navbar = () => {
     <nav className="fixed top-0 right-0 left-0 z-50 bg-navy/90 backdrop-blur-md">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
         <a href="#" className="text-2xl font-bold text-primary">
-          ∞ clicky
+          ⬡ Landify
         </a>
 
         <div className="hidden lg:flex items-center gap-6">

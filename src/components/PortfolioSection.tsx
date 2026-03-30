@@ -1,13 +1,13 @@
 const projects = [
-  { title: "בניית אתר לרשת מעונות", category: "אתר תדמית" },
-  { title: "אתר רב לשוני הפצת סרטים", category: "אתר קטלוגי" },
-  { title: "אתר תדמית ושירותים", category: "אתר תדמית" },
-  { title: "חנות אונליין מייבשי שיער", category: "חנות אונליין" },
-  { title: "ORI רילוקיישן", category: "אתר תדמית" },
-  { title: "חנות אונליין דגם", category: "חנות אונליין" },
-  { title: "אתר למסעדות כרמים", category: "אתר מסעדה" },
-  { title: "אתר DJ לאירועים", category: "אתר תדמית" },
-  { title: "אתר לחברה קבלנית", category: "אתר תדמית" },
+  { title: "בניית אתר לרשת מעונות", category: "אתר תדמית", url: "https://example.com", site: "maonot.co.il" },
+  { title: "אתר רב לשוני הפצת סרטים", category: "אתר קטלוגי", url: "https://example.com", site: "films-dist.co.il" },
+  { title: "אתר תדמית ושירותים", category: "אתר תדמית", url: "https://example.com", site: "services-pro.co.il" },
+  { title: "חנות אונליין מייבשי שיער", category: "חנות אונליין", url: "https://example.com", site: "hairdryer-shop.co.il" },
+  { title: "ORI רילוקיישן", category: "אתר תדמית", url: "https://example.com", site: "ori-relocation.co.il" },
+  { title: "חנות אונליין דגם", category: "חנות אונליין", url: "https://example.com", site: "online-store.co.il" },
+  { title: "אתר למסעדות כרמים", category: "אתר מסעדה", url: "https://example.com", site: "kramim-rest.co.il" },
+  { title: "אתר DJ לאירועים", category: "אתר תדמית", url: "https://example.com", site: "dj-events.co.il" },
+  { title: "אתר לחברה קבלנית", category: "אתר תדמית", url: "https://example.com", site: "contractor.co.il" },
 ];
 
 const gradients = [
@@ -37,17 +37,22 @@ const PortfolioSection = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {projects.map((project, i) => (
-            <div
+            <a
               key={project.title}
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-xl overflow-hidden group cursor-pointer hover:shadow-lg transition-all duration-300 border border-border/40"
             >
-              <div className={`aspect-[4/3] bg-gradient-to-br ${gradients[i % gradients.length]} flex items-center justify-center relative`}>
+              <div className={`aspect-[4/3] bg-gradient-to-br ${gradients[i % gradients.length]} flex flex-col items-center justify-center relative gap-2`}>
                 <span className="text-5xl opacity-30 group-hover:opacity-50 transition-opacity">🌐</span>
-                <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/60 transition-all flex items-center justify-center">
-                  <p className="text-primary-foreground font-bold opacity-0 group-hover:opacity-100 transition-opacity">{project.title}</p>
+                <span className="text-xs text-muted-foreground opacity-60 group-hover:opacity-80 transition-opacity">{project.site}</span>
+                <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/60 transition-all flex flex-col items-center justify-center gap-1">
+                  <p className="text-primary-foreground font-bold opacity-0 group-hover:opacity-100 transition-opacity text-center px-2">{project.title}</p>
+                  <p className="text-primary opacity-0 group-hover:opacity-100 transition-opacity text-xs">{project.site}</p>
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
 
