@@ -1,13 +1,13 @@
 const projects = [
-  { title: "בניית אתר לרשת מעונות", category: "אתר תדמית", url: "https://example.com", site: "maonot.co.il" },
-  { title: "אתר רב לשוני הפצת סרטים", category: "אתר קטלוגי", url: "https://example.com", site: "films-dist.co.il" },
-  { title: "אתר תדמית ושירותים", category: "אתר תדמית", url: "https://example.com", site: "services-pro.co.il" },
-  { title: "חנות אונליין מייבשי שיער", category: "חנות אונליין", url: "https://example.com", site: "hairdryer-shop.co.il" },
-  { title: "ORI רילוקיישן", category: "אתר תדמית", url: "https://example.com", site: "ori-relocation.co.il" },
-  { title: "חנות אונליין דגם", category: "חנות אונליין", url: "https://example.com", site: "online-store.co.il" },
-  { title: "אתר למסעדות כרמים", category: "אתר מסעדה", url: "https://example.com", site: "kramim-rest.co.il" },
-  { title: "אתר DJ לאירועים", category: "אתר תדמית", url: "https://example.com", site: "dj-events.co.il" },
-  { title: "אתר לחברה קבלנית", category: "אתר תדמית", url: "https://example.com", site: "contractor.co.il" },
+  { title: "בניית אתר לרשת מעונות", category: "אתר תדמית", url: "https://example.com", site: "maonot.co.il", img: "https://picsum.photos/seed/maonot/800/600" },
+  { title: "אתר רב לשוני הפצת סרטים", category: "אתר קטלוגי", url: "https://example.com", site: "films-dist.co.il", img: "https://picsum.photos/seed/films/800/600" },
+  { title: "אתר תדמית ושירותים", category: "אתר תדמית", url: "https://example.com", site: "services-pro.co.il", img: "https://picsum.photos/seed/services/800/600" },
+  { title: "חנות אונליין מייבשי שיער", category: "חנות אונליין", url: "https://example.com", site: "hairdryer-shop.co.il", img: "https://picsum.photos/seed/hairdryer/800/600" },
+  { title: "ORI רילוקיישן", category: "אתר תדמית", url: "https://example.com", site: "ori-relocation.co.il", img: "https://picsum.photos/seed/ori/800/600" },
+  { title: "חנות אונליין דגם", category: "חנות אונליין", url: "https://example.com", site: "online-store.co.il", img: "https://picsum.photos/seed/store/800/600" },
+  { title: "אתר למסעדות כרמים", category: "אתר מסעדה", url: "https://example.com", site: "kramim-rest.co.il", img: "https://picsum.photos/seed/kramim/800/600" },
+  { title: "אתר DJ לאירועים", category: "אתר תדמית", url: "https://example.com", site: "dj-events.co.il", img: "https://picsum.photos/seed/djevents/800/600" },
+  { title: "אתר לחברה קבלנית", category: "אתר תדמית", url: "https://example.com", site: "contractor.co.il", img: "https://picsum.photos/seed/contractor/800/600" },
 ];
 
 const gradients = [
@@ -44,10 +44,9 @@ const PortfolioSection = () => {
               rel="noopener noreferrer"
               className="rounded-xl overflow-hidden group cursor-pointer hover:shadow-lg transition-all duration-300 border border-border/40"
             >
-              <div className={`aspect-[4/3] bg-gradient-to-br ${gradients[i % gradients.length]} flex flex-col items-center justify-center relative gap-2`}>
-                <span className="text-5xl opacity-30 group-hover:opacity-50 transition-opacity">🌐</span>
-                <span className="text-xs text-muted-foreground opacity-60 group-hover:opacity-80 transition-opacity">{project.site}</span>
-                <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/60 transition-all flex flex-col items-center justify-center gap-1">
+              <div className="aspect-[4/3] relative overflow-hidden">
+                <img src={project.img} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/70 transition-all flex flex-col items-center justify-center gap-1">
                   <p className="text-primary-foreground font-bold opacity-0 group-hover:opacity-100 transition-opacity text-center px-2">{project.title}</p>
                   <p className="text-primary opacity-0 group-hover:opacity-100 transition-opacity text-xs">{project.site}</p>
                 </div>
