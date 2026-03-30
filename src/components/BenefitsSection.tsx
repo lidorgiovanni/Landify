@@ -13,23 +13,27 @@ const benefits = [
 
 const BenefitsSection = () => {
   return (
-    <section id="benefits" className="section-padding">
+    <section id="benefits" className="section-padding bg-navy text-primary-foreground">
       <div className="container mx-auto">
-        <h2 className="text-3xl md:text-5xl font-bold text-center mb-4">
-          בניית אתרים שהופכים <span className="text-gradient">מבקרים ללקוחות</span>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-2">
+          בניית אתרים שהופכים <span className="text-primary">מבקרים</span> ללקוחות
         </h2>
-        <p className="text-muted-foreground text-center max-w-3xl mx-auto mb-16 text-lg">
-          בקליקי מעצבים ובונים אתרי וורדפרס בהתאמה אישית – מאתרי תדמית ועד חנויות אונליין – עם שילוב מנצח של עיצוב מודרני, חוויית משתמש ופתרונות ניהול פשוטים.
+        <div className="w-16 h-1 bg-primary mx-auto mb-4" />
+        <p className="text-primary-foreground/70 text-center max-w-3xl mx-auto mb-6">
+          <strong>בקליקי מעצבים ובונים אתרי וורדפרס בהתאמה אישית – מאתרי תדמית ועד חנויות אונליין</strong> – עם שילוב מנצח של עיצוב מודרני, חוויית משתמש ופתרונות ניהול פשוטים ללא תלות.
+        </p>
+        <p className="text-primary-foreground/60 text-center max-w-3xl mx-auto mb-14 text-sm">
+          בקליקי אין אותיות קטנות, אין מילים גבוהות ומפוצצות, יש תכלס! יש שירות אמין, אישי ומקצועי, עלויות הוגנות ובעיקר יש תוצאות!
         </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {benefits.map((b) => (
             <div key={b.title} className="text-center group">
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
-                <b.icon className="w-8 h-8 text-primary" />
+              <div className="w-16 h-16 rounded-2xl bg-primary/15 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/25 transition-colors">
+                <b.icon className="w-8 h-8 text-primary" strokeWidth={1.5} />
               </div>
-              <h4 className="font-semibold mb-2">{b.title}</h4>
-              <p className="text-sm text-muted-foreground">{b.desc}</p>
+              <h4 className="font-semibold mb-2 text-primary-foreground">{b.title}</h4>
+              <p className="text-sm text-primary-foreground/60">{b.desc}</p>
             </div>
           ))}
         </div>
