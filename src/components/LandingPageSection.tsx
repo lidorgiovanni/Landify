@@ -16,7 +16,7 @@ const LandingPageSection = () => {
       <div className="container mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           {/* Right - text */}
-          <div>
+          <div className="reveal-right">
             <p className="text-primary font-semibold text-sm mb-2 uppercase tracking-wider">דפי נחיתה</p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               דף נחיתה שממיר —<br />
@@ -51,7 +51,7 @@ const LandingPageSection = () => {
           </div>
 
           {/* Left - feature cards */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="reveal-left grid grid-cols-2 gap-4">
             {features.map((f) => (
               <div key={f.title} className="bg-card border border-border/40 rounded-2xl p-4 hover:border-primary/40 hover:shadow-md transition-all group">
                 <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-3 group-hover:bg-primary transition-colors">

@@ -9,7 +9,7 @@ const ContactSection = () => {
       <div className="container mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           {/* Right - big text */}
-          <div>
+          <div className="reveal-right">
             <p className="text-primary font-semibold text-sm mb-3 uppercase tracking-wider">צרו קשר</p>
             <h2 className="text-3xl md:text-5xl font-bold leading-tight mb-6">
               מוכנים להתחיל?<br />
@@ -41,7 +41,7 @@ const ContactSection = () => {
           </div>
 
           {/* Left - form */}
-          <div className="bg-white/5 border border-white/10 rounded-3xl p-8">
+          <div className="reveal-left bg-white/5 border border-white/10 rounded-3xl p-8">
             <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
               <div className="grid grid-cols-2 gap-4">
                 <Input placeholder="שם מלא" className="bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:border-primary" />

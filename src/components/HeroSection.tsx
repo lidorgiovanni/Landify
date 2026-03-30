@@ -60,7 +60,7 @@ const HeroSection = () => {
 
           {/* Left - stats card */}
           <div className="hidden md:flex justify-center animate-fade-up-delay-2">
-            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 w-72 text-center space-y-6">
+            <div className="animate-float bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 w-72 text-center space-y-6">
               <div>
                 <p className="text-5xl font-bold text-primary">200+</p>
                 <p className="text-white/70 text-sm mt-1">אתרים ודפי נחיתה</p>

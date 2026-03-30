@@ -56,7 +56,7 @@ const PricingSection = () => {
   return (
     <section id="pricing" className="section-padding bg-secondary">
       <div className="container mx-auto">
-        <div className="text-center mb-14">
+        <div className="reveal text-center mb-14">
           <p className="text-primary font-semibold text-sm mb-2 uppercase tracking-wider">מחירים</p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
             שקיפות מלאה — בלי הפתעות
@@ -66,57 +66,63 @@ const PricingSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto items-start">
-          {plans.map((plan) => (
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto items-stretch">
+          {plans.map((plan, i) => (
             <div
               key={plan.name}
-              className={`rounded-3xl p-7 flex flex-col border transition-all duration-300 ${
+              className={`reveal reveal-delay-${i + 1} rounded-3xl flex flex-col border transition-all duration-300 ${
                 plan.highlight
                   ? "bg-primary text-white border-primary shadow-2xl shadow-primary/30 md:-mt-4 md:mb-4"
-                  : "bg-card border-border/40 hover:border-primary/30 hover:shadow-lg"
+                  : "bg-card border-border/40 hover:border-primary/30 hover:shadow-lg hover:-translate-y-1"
               }`}
             >
+              {/* Popular badge — sits ABOVE card content, never overlaps */}
               {plan.highlight && (
-                <span className="self-start text-xs bg-white/20 text-white px-3 py-1 rounded-full font-semibold mb-4">
-                  ⭐ הכי פופולרי
-                </span>
+                <div className="flex justify-center pt-5 pb-0 px-7">
+                  <span className="text-xs bg-white/20 text-white px-4 py-1.5 rounded-full font-semibold">
+                    ⭐ הכי פופולרי
+                  </span>
+                </div>
               )}
-              <p className={`text-sm font-semibold mb-1 ${plan.highlight ? "text-white/80" : "text-muted-foreground"}`}>
-                {plan.name}
-              </p>
-              <div className="flex items-end gap-1 mb-1">
-                <p className={`text-4xl font-bold ${plan.highlight ? "text-white" : "text-foreground"}`}>
-                  {plan.price}
+
+              <div className="p-7 flex flex-col flex-1">
+                <p className={`text-sm font-semibold mb-1 ${plan.highlight ? "text-white/80" : "text-muted-foreground"}`}>
+                  {plan.name}
                 </p>
-                <p className={`text-sm mb-1 ${plan.highlight ? "text-white/50" : "text-muted-foreground"}`}>חד פעמי</p>
+                <div className="flex items-end gap-1 mb-1">
+                  <p className={`text-4xl font-bold ${plan.highlight ? "text-white" : "text-foreground"}`}>
+                    {plan.price}
+                  </p>
+                  <p className={`text-sm mb-1 ${plan.highlight ? "text-white/50" : "text-muted-foreground"}`}>חד פעמי</p>
+                </div>
+                <p className={`text-xs mb-6 ${plan.highlight ? "text-white/60" : "text-muted-foreground"}`}>
+                  {plan.desc}
+                </p>
+                <ul className="space-y-2.5 flex-1 mb-7">
+                  {plan.features.map((f) => (
+                    <li key={f.text} className="flex items-center gap-2 text-sm">
+                      {f.included
+                        ? <CheckCircle size={14} className={`shrink-0 ${plan.highlight ? "text-white/80" : "text-primary"}`} />
+                        : <X size={14} className={`shrink-0 ${plan.highlight ? "text-white/30" : "text-muted-foreground/40"}`} />
+                      }
+                      <span className={f.included
+                        ? (plan.highlight ? "text-white/90" : "text-foreground")
+                        : (plan.highlight ? "text-white/30" : "text-muted-foreground/40 line-through")
+                      }>{f.text}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Button
+                  className={`w-full rounded-xl font-bold py-5 transition-transform hover:scale-105 ${
+                    plan.highlight
+                      ? "bg-white text-primary hover:bg-white/90"
+                      : "bg-primary text-white hover:bg-primary/90"
+                  }`}
+                  asChild
+                >
+                  <a href="#contact">התחילו עכשיו</a>
+                </Button>
               </div>
-              <p className={`text-xs mb-6 ${plan.highlight ? "text-white/60" : "text-muted-foreground"}`}>
-                {plan.desc}
-              </p>
-              <ul className="space-y-2.5 flex-1 mb-7">
-                {plan.features.map((f) => (
-                  <li key={f.text} className="flex items-center gap-2 text-sm">
-                    {f.included
-                      ? <CheckCircle size={14} className={`shrink-0 ${plan.highlight ? "text-white/80" : "text-primary"}`} />
-                      : <X size={14} className={`shrink-0 ${plan.highlight ? "text-white/30" : "text-muted-foreground/40"}`} />
-                    }
-                    <span className={f.included
-                      ? (plan.highlight ? "text-white/90" : "text-foreground")
-                      : (plan.highlight ? "text-white/30" : "text-muted-foreground/40 line-through")
-                    }>{f.text}</span>
-                  </li>
-                ))}
-              </ul>
-              <Button
-                className={`w-full rounded-xl font-bold py-5 ${
-                  plan.highlight
-                    ? "bg-white text-primary hover:bg-white/90"
-                    : "bg-primary text-white hover:bg-primary/90"
-                }`}
-                asChild
-              >
-                <a href="#contact">התחילו עכשיו</a>
-              </Button>
             </div>
           ))}
         </div>

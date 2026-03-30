@@ -125,4 +125,73 @@
   .animate-bounce-y {
     animation: bounce-y 1.6s ease-in-out infinite;
   }
+
+  /* float up-down */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-10px); }
+  }
+  .animate-float { animation: float 3.5s ease-in-out infinite; }
+
+  /* pulse ring */
+  @keyframes pulse-ring {
+    0%   { box-shadow: 0 0 0 0 hsl(184 97% 37% / 0.4); }
+    70%  { box-shadow: 0 0 0 12px hsl(184 97% 37% / 0); }
+    100% { box-shadow: 0 0 0 0 hsl(184 97% 37% / 0); }
+  }
+  .animate-pulse-ring { animation: pulse-ring 2s ease-out infinite; }
+
+  /* slide in from right (RTL) */
+  @keyframes slide-in-right {
+    from { opacity: 0; transform: translateX(40px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  .animate-slide-in-right { animation: slide-in-right 0.5s ease both; }
+
+  /* slide in from left */
+  @keyframes slide-in-left {
+    from { opacity: 0; transform: translateX(-40px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  .animate-slide-in-left { animation: slide-in-left 0.5s ease both; }
+
+  /* scale in */
+  @keyframes scale-in {
+    from { opacity: 0; transform: scale(0.85); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+  .animate-scale-in { animation: scale-in 0.4s ease both; }
+
+  /* scroll-triggered reveal — hidden by default */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
 }

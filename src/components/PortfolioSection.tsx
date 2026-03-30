@@ -23,7 +23,7 @@ const PortfolioSection = () => {
   return (
     <section id="portfolio" className="section-padding bg-secondary">
       <div className="container mx-auto">
-        <div className="text-center mb-10">
+        <div className="reveal text-center mb-10">
           <p className="text-primary font-semibold text-sm mb-2 uppercase tracking-wider">תיק עבודות</p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">פרויקטים נבחרים</h2>
           <p className="text-muted-foreground max-w-xl mx-auto text-sm">
