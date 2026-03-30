@@ -2,7 +2,7 @@ import { Star, ArrowLeft, CheckCircle, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
 
-const PHONE = "972543493564";
+const PHONE = "972543495645";
 const WA_MSG = encodeURIComponent("היי! ראיתי את האתר שלכם ואשמח לשמוע עוד על בניית אתר לעסק שלי 😊");
 
 const perks = ["עיצוב מותאם אישית", "SEO מובנה", "תמיכה שוטפת"];

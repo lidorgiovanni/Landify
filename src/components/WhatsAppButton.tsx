@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 
-const PHONE = "972543493564";
+const PHONE = "972543495645";
 
 const messages = [
   { label: "🌐 אני רוצה אתר חדש", text: "היי! אני מעוניין/ת בבניית אתר חדש לעסק שלי. אשמח לשמוע פרטים ומחירים 😊" },

@@ -29,13 +29,13 @@ const ContactSection = () => {
               השאירו פרטים ונחזור אליכם תוך שעות ספורות עם ייעוץ אישי חינם.
             </p>
             <div className="space-y-5">
-              <a href="https://wa.me/972543493564" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
+              <a href="https://wa.me/972543495645" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
                 <div className="w-12 h-12 rounded-xl bg-primary/15 flex items-center justify-center group-hover:bg-primary transition-colors duration-200">
                   <Phone className="w-5 h-5 text-primary group-hover:text-white transition-colors" />
                 </div>
                 <div>
                   <p className="text-xs text-primary-foreground/40">טלפון / וואטסאפ</p>
-                  <p className="font-semibold text-primary-foreground" dir="ltr">054-3493564</p>
+                  <p className="font-semibold text-primary-foreground" dir="ltr">054-349-5645</p>
                 </div>
               </a>
               <div className="flex items-center gap-4">

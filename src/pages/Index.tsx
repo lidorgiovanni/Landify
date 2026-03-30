@@ -13,6 +13,7 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
+import CTABanner from "@/components/CTABanner";
 import TrustBar from "@/components/TrustBar";
 
 const Index = () => {
@@ -46,6 +47,7 @@ const Index = () => {
       <PricingSection />
       <TestimonialsSection />
       <FAQSection />
+      <CTABanner />
       <ContactSection />
       <Footer />
       <WhatsAppButton />

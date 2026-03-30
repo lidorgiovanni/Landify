@@ -48,10 +48,10 @@ const PortfolioSection = () => {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {filtered.map((project) => (
+          {filtered.map((project, i) => (
             <div
               key={project.title}
-              className="rounded-2xl overflow-hidden group cursor-pointer hover:shadow-xl transition-all duration-300 border border-border/40"
+              className="reveal rounded-2xl overflow-hidden group cursor-pointer hover:shadow-xl transition-all duration-300 border border-border/40 hover:-translate-y-1"
             >
               <div className="aspect-[4/3] relative overflow-hidden bg-muted">
                 <img
