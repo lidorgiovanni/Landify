@@ -39,13 +39,13 @@ const TestimonialsSection = () => {
   return (
     <section id="testimonials" className="section-padding bg-navy text-primary-foreground overflow-hidden">
       <div className="container mx-auto mb-12">
+        <p className="text-primary font-semibold text-sm mb-2 uppercase tracking-wider text-center">מה אומרים עלינו</p>
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-2">
           לקוחות ממליצים
         </h2>
         <div className="w-16 h-1 bg-primary mx-auto mb-4" />
         <p className="text-primary-foreground/60 text-center max-w-2xl mx-auto">
-          הלקוחות שלנו מספרים את הסיפור האמיתי של העבודה איתנו.<br />
-          אתרים מדויקים, חכמים, שנבנו מתוך הקשבה אמיתית לצרכים שלהם.
+          הלקוחות שלנו מספרים את הסיפור האמיתי של העבודה איתנו.
         </p>
       </div>
 

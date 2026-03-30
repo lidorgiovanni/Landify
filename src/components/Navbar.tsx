@@ -4,9 +4,10 @@ import { Button } from "@/components/ui/button";
 
 const navItems = [
   { label: "שירותים", href: "#services" },
+  { label: "דף נחיתה", href: "#landing" },
   { label: "עבודות", href: "#portfolio" },
   { label: "תהליך", href: "#process" },
-  { label: "למה אנחנו", href: "#benefits" },
+  { label: "מחירים", href: "#pricing" },
   { label: "המלצות", href: "#testimonials" },
 ];
 

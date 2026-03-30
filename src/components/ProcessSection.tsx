@@ -20,8 +20,8 @@ const ProcessSection = () => {
         </div>
 
         <div className="relative max-w-3xl mx-auto">
-          {/* vertical line */}
-          <div className="absolute right-7 top-0 bottom-0 w-px bg-border hidden md:block" />
+          {/* vertical line - fixed for RTL: use left-7 */}
+          <div className="absolute left-7 top-0 bottom-0 w-px bg-border hidden md:block" />
 
           <div className="space-y-8">
             {steps.map((step, i) => (

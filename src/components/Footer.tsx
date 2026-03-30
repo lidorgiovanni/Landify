@@ -16,8 +16,8 @@ const Footer = () => {
           <div>
             <p className="text-white/60 text-xs font-semibold uppercase tracking-wider mb-4">ניווט מהיר</p>
             <div className="space-y-2">
-              {["#services", "#portfolio", "#process", "#benefits", "#contact"].map((href, i) => {
-                const labels = ["שירותים", "תיק עבודות", "התהליך שלנו", "למה אנחנו", "צרו קשר"];
+              {["#services", "#landing", "#portfolio", "#pricing", "#testimonials", "#contact"].map((href, i) => {
+                const labels = ["שירותים", "דף נחיתה", "תיק עבודות", "מחירים", "המלצות", "צרו קשר"];
                 return (
                   <a key={href} href={href} className="block text-white/50 hover:text-primary text-sm transition-colors">
                     {labels[i]}
