@@ -91,7 +91,7 @@
   }
 
   .section-padding {
-    @apply py-20 md:py-28 px-4 md:px-8;
+    @apply py-16 md:py-20 px-4 md:px-8;
   }
 
   /* marquee track — forced LTR so RTL page doesn't reverse direction */

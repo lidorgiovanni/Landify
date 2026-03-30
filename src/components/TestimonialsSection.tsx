@@ -42,7 +42,7 @@ const Card = ({ t }: { t: typeof testimonials[0] }) => (
 
 const TestimonialsSection = () => {
   return (
-    <section id="testimonials" className="py-20 md:py-28 bg-navy text-primary-foreground">
+    <section id="testimonials" className="pt-10 md:pt-14 pb-16 md:pb-20 bg-navy text-primary-foreground">
       <div className="container mx-auto px-4 mb-12">
         <p className="text-primary font-semibold text-sm mb-2 uppercase tracking-wider text-center">מה אומרים עלינו</p>
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-2">לקוחות ממליצים</h2>

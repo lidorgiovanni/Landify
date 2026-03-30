@@ -14,7 +14,7 @@ const FAQSection = () => {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="section-padding">
+    <section id="faq" className="pt-10 md:pt-14 pb-16 md:pb-20 px-4 md:px-8">
       <div className="container mx-auto max-w-3xl">
         <div className="reveal text-center mb-12">
           <p className="text-primary font-semibold text-sm mb-2 uppercase tracking-wider">שאלות נפוצות</p>

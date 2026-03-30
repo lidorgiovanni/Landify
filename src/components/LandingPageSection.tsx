@@ -12,7 +12,7 @@ const features = [
 
 const LandingPageSection = () => {
   return (
-    <section id="landing" className="section-padding bg-secondary">
+    <section id="landing" className="pt-10 md:pt-14 pb-16 md:pb-20 px-4 md:px-8 bg-secondary">
       <div className="container mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           {/* Right - text */}

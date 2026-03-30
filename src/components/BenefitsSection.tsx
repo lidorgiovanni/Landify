@@ -53,7 +53,7 @@ const Counter = ({ target, suffix }: { target: number; suffix: string }) => {
 
 const BenefitsSection = () => {
   return (
-    <section id="benefits" className="pt-20 md:pt-28 pb-10 md:pb-14 bg-navy text-primary-foreground">
+    <section id="benefits" className="pt-16 md:pt-20 pb-0 px-4 md:px-8 bg-navy text-primary-foreground">
       <div className="container mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="reveal-right">

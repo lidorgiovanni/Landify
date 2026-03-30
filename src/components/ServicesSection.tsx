@@ -18,7 +18,7 @@ const extras = [
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="section-padding bg-secondary">
+    <section id="services" className="pt-16 md:pt-20 pb-0 px-4 md:px-8 bg-secondary">
       <div className="container mx-auto">
         <div className="reveal flex flex-col md:flex-row md:items-end md:justify-between mb-14 gap-4">
           <div>

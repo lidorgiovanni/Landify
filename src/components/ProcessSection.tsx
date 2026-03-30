@@ -9,7 +9,7 @@ const steps = [
 
 const ProcessSection = () => {
   return (
-    <section id="process" className="section-padding">
+    <section id="process" className="pt-16 md:pt-20 pb-10 md:pb-14 px-4 md:px-8">
       <div className="container mx-auto">
         <div className="reveal text-center mb-14">
           <p className="text-primary font-semibold text-sm mb-2 uppercase tracking-wider">איך זה עובד</p>
