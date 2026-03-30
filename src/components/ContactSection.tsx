@@ -48,6 +48,13 @@ const ContactSection = () => {
                 <Input type="tel" placeholder="טלפון" className="bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:border-primary" />
               </div>
               <Input type="email" placeholder="אימייל" className="bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:border-primary" />
+              <select className="w-full rounded-md bg-white/10 border border-white/20 text-white/70 px-3 py-2 text-sm focus:outline-none focus:border-primary">
+                <option value="" className="bg-navy">איזה שירות מעניין אתכם?</option>
+                <option value="landing" className="bg-navy">דף נחיתה — ₪790</option>
+                <option value="site" className="bg-navy">אתר תדמית — ₪2,490</option>
+                <option value="shop" className="bg-navy">חנות אונליין — ₪4,490</option>
+                <option value="other" className="bg-navy">אחר</option>
+              </select>
               <Textarea
                 placeholder="ספרו לנו על הפרויקט שלכם..."
                 className="bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:border-primary min-h-[120px]"

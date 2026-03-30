@@ -36,6 +36,15 @@ const LandingPageSection = () => {
                 ))}
               </ul>
             </div>
+            <div className="flex items-center gap-4 mb-6">
+              <div className="bg-primary/10 border border-primary/20 rounded-2xl px-5 py-3 text-center">
+                <p className="text-2xl font-bold text-primary">₪790</p>
+                <p className="text-xs text-muted-foreground">מחיר התחלתי</p>
+              </div>
+              <div className="text-sm text-muted-foreground leading-relaxed">
+                מחיר קבוע, חד פעמי.<br />ללא דמי תחזוקה חובה.  
+              </div>
+            </div>
             <Button className="bg-primary text-white hover:bg-primary/90 rounded-full px-8 font-bold shadow-md shadow-primary/20" asChild>
               <a href="#contact">קבלו הצעת מחיר לדף נחיתה</a>
             </Button>
