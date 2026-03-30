@@ -94,23 +94,18 @@
     @apply py-20 md:py-28 px-4 md:px-8;
   }
 
-  @keyframes scroll-left {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
+  /* marquee track — forced LTR so RTL page doesn't reverse direction */
+  .marquee-wrapper {
+    direction: ltr;
+    overflow: hidden;
+    width: 100%;
   }
-  .animate-scroll-left {
-    animation: scroll-left 40s linear infinite;
-  }
-  .animate-scroll-left:hover {
-    animation-play-state: paused;
-  }
-
-  /* marquee track — self-contained, no overflow issues */
   .marquee-track {
     display: flex;
     width: max-content;
     animation: marquee 38s linear infinite;
-    padding: 0 1rem;
+    gap: 1.25rem;
+    padding: 0 0.5rem;
   }
   .marquee-track:hover {
     animation-play-state: paused;

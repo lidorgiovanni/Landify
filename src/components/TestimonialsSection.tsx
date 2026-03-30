@@ -15,7 +15,11 @@ const initials = (name: string) =>
   name.split(" ").map((w) => w[0]).join("").slice(0, 2).toUpperCase();
 
 const Card = ({ t }: { t: typeof testimonials[0] }) => (
-  <div className="glass-card-dark p-5 rounded-2xl flex flex-col justify-between shrink-0 w-72 md:w-80">
+  <div
+    className="glass-card-dark p-5 rounded-2xl flex flex-col justify-between shrink-0"
+    style={{ width: "280px" }}
+    dir="rtl"
+  >
     <div>
       <div className="flex gap-0.5 mb-3">
         {[...Array(5)].map((_, j) => (
@@ -48,16 +52,18 @@ const TestimonialsSection = () => {
         </p>
       </div>
 
-      {/* Marquee wrapper — overflow hidden on parent, no width constraint issues */}
-      <div className="relative w-full overflow-hidden">
-        <div className="flex gap-5 marquee-track">
-          {[...testimonials, ...testimonials].map((t, i) => (
-            <Card key={i} t={t} />
-          ))}
+      {/* marquee-wrapper forces LTR so RTL html doesn't reverse the scroll direction */}
+      <div className="relative">
+        <div className="marquee-wrapper">
+          <div className="marquee-track">
+            {[...testimonials, ...testimonials].map((t, i) => (
+              <Card key={i} t={t} />
+            ))}
+          </div>
         </div>
         {/* fade edges */}
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[hsl(194_100%_10%)] to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[hsl(194_100%_10%)] to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[hsl(194_100%_10%)] to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[hsl(194_100%_10%)] to-transparent" />
       </div>
     </section>
   );

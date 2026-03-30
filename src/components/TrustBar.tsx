@@ -8,11 +8,13 @@ const items = [
 ];
 
 const TrustBar = () => (
-  <div className="bg-primary/10 border-y border-primary/20 py-3 overflow-hidden">
-    <div className="flex gap-10 marquee-track text-sm font-medium text-primary whitespace-nowrap">
-      {[...items, ...items].map((item, i) => (
-        <span key={i} className="shrink-0">{item}</span>
-      ))}
+  <div className="bg-primary/10 border-y border-primary/20 py-3">
+    <div className="marquee-wrapper">
+      <div className="marquee-track text-sm font-medium text-primary whitespace-nowrap">
+        {[...items, ...items, ...items].map((item, i) => (
+          <span key={i} className="shrink-0 px-6">{item}</span>
+        ))}
+      </div>
     </div>
   </div>
 );
