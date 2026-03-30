@@ -5,12 +5,13 @@ import { Phone, Mail, MapPin } from "lucide-react";
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="section-padding bg-secondary/30">
+    <section id="contact" className="section-padding bg-secondary">
       <div className="container mx-auto">
-        <h2 className="text-3xl md:text-5xl font-bold text-center mb-4">
-          מחפשים בניית אתר <span className="text-gradient">תפור על העסק?</span>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-2 text-foreground">
+          מחפשים בניית אתר ש"תפור" על העסק שלכם?
         </h2>
-        <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-16 text-lg">
+        <div className="w-16 h-1 bg-primary mx-auto mb-4" />
+        <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-14">
           השאירו פרטים וקבלו ייעוץ אישי חינם.
         </p>
 
@@ -20,7 +21,7 @@ const ContactSection = () => {
             <Input type="tel" placeholder="טלפון" className="bg-card border-border" />
             <Input type="email" placeholder="אימייל" className="bg-card border-border" />
             <Textarea placeholder="ספרו לנו על הפרויקט שלכם..." className="bg-card border-border min-h-[120px]" />
-            <Button className="w-full text-lg py-6">שלחו פנייה</Button>
+            <Button className="w-full text-lg py-6 bg-primary text-primary-foreground hover:bg-primary/90">קליקי!</Button>
           </form>
 
           <div className="space-y-8 flex flex-col justify-center">
@@ -30,7 +31,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">טלפון</p>
-                <p className="font-semibold" dir="ltr">050-123-4567</p>
+                <p className="font-semibold text-foreground" dir="ltr">050-123-4567</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
@@ -39,7 +40,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">אימייל</p>
-                <p className="font-semibold">info@clicky.co.il</p>
+                <p className="font-semibold text-foreground">info@clicky.co.il</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
@@ -48,7 +49,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">מיקום</p>
-                <p className="font-semibold">ישראל</p>
+                <p className="font-semibold text-foreground">ישראל</p>
               </div>
             </div>
           </div>
