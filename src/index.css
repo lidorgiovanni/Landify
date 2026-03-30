@@ -105,6 +105,21 @@
     animation-play-state: paused;
   }
 
+  /* marquee track — self-contained, no overflow issues */
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 38s linear infinite;
+    padding: 0 1rem;
+  }
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+  @keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
   @keyframes fade-up {
     from { opacity: 0; transform: translateY(24px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -163,35 +178,29 @@
   .animate-scale-in { animation: scale-in 0.4s ease both; }
 
   /* scroll-triggered reveal — hidden by default */
+  .reveal, .reveal-left, .reveal-right {
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
   .reveal {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
+    transform: translateY(28px);
   }
   .reveal-left {
     opacity: 0;
-    transform: translateX(40px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-  .reveal-left.visible {
-    opacity: 1;
-    transform: translateX(0);
+    transform: translateX(36px);
   }
   .reveal-right {
     opacity: 0;
-    transform: translateX(-40px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: translateX(-36px);
   }
+  .reveal.visible,
+  .reveal-left.visible,
   .reveal-right.visible {
     opacity: 1;
-    transform: translateX(0);
+    transform: translate(0, 0);
   }
-  .reveal-delay-1 { transition-delay: 0.1s; }
-  .reveal-delay-2 { transition-delay: 0.2s; }
-  .reveal-delay-3 { transition-delay: 0.3s; }
-  .reveal-delay-4 { transition-delay: 0.4s; }
+  .reveal-delay-1 { transition-delay: 0.08s; }
+  .reveal-delay-2 { transition-delay: 0.16s; }
+  .reveal-delay-3 { transition-delay: 0.24s; }
+  .reveal-delay-4 { transition-delay: 0.32s; }
 }

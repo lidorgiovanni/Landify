@@ -14,10 +14,22 @@ const navItems = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [active, setActive] = useState("");
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", onScroll);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 40);
+      // find active section
+      const sections = navItems.map((n) => n.href.replace("#", ""));
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sections[i]);
+        if (el && window.scrollY >= el.offsetTop - 120) {
+          setActive("#" + sections[i]);
+          break;
+        }
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -25,7 +37,7 @@ const Navbar = () => {
     <nav className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${scrolled ? "bg-navy/95 backdrop-blur-md shadow-lg" : "bg-transparent"}`}>
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
         <a href="#" className="text-xl font-bold text-white flex items-center gap-2">
-          <span className="w-7 h-7 rounded-lg bg-primary flex items-center justify-center text-white text-xs font-black">L</span>
+          <span className="w-7 h-7 rounded-lg bg-primary flex items-center justify-center text-white text-xs font-black animate-pulse-ring">L</span>
           Landify
         </a>
 
@@ -34,18 +46,22 @@ const Navbar = () => {
             <a
               key={item.href}
               href={item.href}
-              className="text-sm text-white/80 hover:text-white hover:bg-white/15 px-4 py-1.5 rounded-full transition-all"
+              className={`text-sm px-4 py-1.5 rounded-full transition-all ${
+                active === item.href
+                  ? "bg-primary text-white font-semibold"
+                  : "text-white/80 hover:text-white hover:bg-white/15"
+              }`}
             >
               {item.label}
             </a>
           ))}
         </div>
 
-        <Button size="sm" className="hidden lg:flex bg-primary text-white hover:bg-primary/90 rounded-full px-5" asChild>
+        <Button size="sm" className="hidden lg:flex bg-primary text-white hover:bg-primary/90 rounded-full px-5 shadow-md shadow-primary/30" asChild>
           <a href="#contact">התחילו עכשיו</a>
         </Button>
 
-        <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden text-white">
+        <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden text-white p-1">
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
@@ -57,7 +73,9 @@ const Navbar = () => {
               key={item.href}
               href={item.href}
               onClick={() => setIsOpen(false)}
-              className="block py-2.5 text-white/80 hover:text-primary transition-colors border-b border-white/5 text-sm"
+              className={`block py-2.5 transition-colors border-b border-white/5 text-sm ${
+                active === item.href ? "text-primary font-semibold" : "text-white/80 hover:text-primary"
+              }`}
             >
               {item.label}
             </a>
