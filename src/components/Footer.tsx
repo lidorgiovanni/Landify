@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 text-center">
         <a href="#" className="text-2xl font-bold text-primary">⬡ Landify</a>
         <p className="text-primary-foreground/50 text-sm mt-3">
-          מעל 20 שנה ניסיון מוכח בעולם הדיגיטל. בניית אתרים מקצועית בוורדפרס.
+          מעל 20 שנה ניסיון מוכח בעולם הדיגיטל. בניית אתרים מקצועית בהתאמה אישית.
         </p>
         <a
           href="https://wa.me/972543493564"

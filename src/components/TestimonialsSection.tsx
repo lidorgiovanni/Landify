@@ -45,7 +45,7 @@ const TestimonialsSection = () => {
         <div className="w-16 h-1 bg-primary mx-auto mb-4" />
         <p className="text-primary-foreground/60 text-center max-w-2xl mx-auto">
           הלקוחות שלנו מספרים את הסיפור האמיתי של העבודה איתנו.<br />
-          אתרי וורדפרס מדויקים, חכמים, שנבנו מתוך הקשבה אמיתית לצרכים שלהם.
+          אתרים מדויקים, חכמים, שנבנו מתוך הקשבה אמיתית לצרכים שלהם.
         </p>
       </div>
 

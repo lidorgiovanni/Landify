@@ -1,7 +1,7 @@
 import { Monitor, Paintbrush, Cloud, Heart, GraduationCap, Search, Coins, Award } from "lucide-react";
 
 const benefits = [
-  { icon: Monitor, title: "מומחיות בוורדפרס ואלמנטור", desc: "אתרים מותאמים אישית, רספונסיביים ומקצועיים." },
+  { icon: Monitor, title: "מומחיות בבניית אתרים מתקדמים", desc: "אתרים מותאמים אישית, רספונסיביים ומקצועיים." },
   { icon: Paintbrush, title: "עיצוב שמותאם לכם אישית", desc: "אתר שמדבר את השפה של העסק שלכם." },
   { icon: Cloud, title: "אחסון ותחזוקה מקצועיים", desc: "שירות יציב ומהיר עם זמינות גבוהה." },
   { icon: Heart, title: "שירות אישי ומחויבות מלאה", desc: "יחס חם, זמינות גבוהה ותמיכה לאורך זמן." },
@@ -20,10 +20,10 @@ const BenefitsSection = () => {
         </h2>
         <div className="w-16 h-1 bg-primary mx-auto mb-4" />
         <p className="text-primary-foreground/70 text-center max-w-3xl mx-auto mb-6">
-          <strong>בקליקי מעצבים ובונים אתרי וורדפרס בהתאמה אישית – מאתרי תדמית ועד חנויות אונליין</strong> – עם שילוב מנצח של עיצוב מודרני, חוויית משתמש ופתרונות ניהול פשוטים ללא תלות.
+          <strong>ב-Landify מעצבים ובונים אתרים בהתאמה אישית – מאתרי תדמית ועד חנויות אונליין</strong> – עם שילוב מנצח של עיצוב מודרני, חוויית משתמש ופתרונות ניהול פשוטים ללא תלות.
         </p>
         <p className="text-primary-foreground/60 text-center max-w-3xl mx-auto mb-14 text-sm">
-          בקליקי אין אותיות קטנות, אין מילים גבוהות ומפוצצות, יש תכלס! יש שירות אמין, אישי ומקצועי, עלויות הוגנות ובעיקר יש תוצאות!
+          ב-Landify אין אותיות קטנות, אין מילים גבוהות ומפוצצות, יש תכלס! יש שירות אמין, אישי ומקצועי, עלויות הוגנות ובעיקר יש תוצאות!
         </p>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">

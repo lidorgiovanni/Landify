@@ -5,9 +5,9 @@ import { Button } from "@/components/ui/button";
 const navItems = [
   { label: "השירותים שלנו", href: "#services" },
   { label: "תיק עבודות", href: "#portfolio" },
-  { label: "וורדפרס למתחילים", href: "#process" },
-  { label: "מפתח לעולם הדיגיטל", href: "#benefits" },
-  { label: "למה כאן?", href: "#testimonials" },
+  { label: "התהליך שלנו", href: "#process" },
+  { label: "למה Landify?", href: "#benefits" },
+  { label: "לקוחות ממליצים", href: "#testimonials" },
   { label: "צרו קשר", href: "#contact" },
 ];
 
@@ -38,7 +38,7 @@ const Navbar = () => {
             <Search size={18} />
           </button>
           <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90" asChild>
-            <a href="#contact">בניית אתרים לעסקים</a>
+            <a href="#contact">בניית אתר לעסק</a>
           </Button>
         </div>
 
@@ -63,7 +63,7 @@ const Navbar = () => {
             </a>
           ))}
           <Button className="w-full mt-2 bg-primary text-primary-foreground" asChild>
-            <a href="#contact">בניית אתרים לעסקים</a>
+            <a href="#contact">בניית אתר לעסק</a>
           </Button>
         </div>
       )}
