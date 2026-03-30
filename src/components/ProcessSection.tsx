@@ -1,36 +1,41 @@
 const steps = [
-  { num: "01", title: "אפיון ממוקד", desc: "ראיון עומק, זיהוי מסרים, קהל יעד, מתחרים ויעדים עסקיים. מפת אתר, היררכיית תכנים ומבנה עמודים." },
-  { num: "02", title: "עיצוב UI מותאם אישית", desc: "מערכת צבעים, טיפוגרפיה, התאמות ללוגו/מותג, סקיצות למסכים מעוצבים." },
-  { num: "03", title: "פיתוח ובנייה מקצועית", desc: "בנייה מודולרית, ביצועים, אבטחה, SEO, נגישות, חיבורי טפסים וכלים." },
-  { num: "04", title: "הזנת תכנים", desc: "איסוף ומיפוי תכנים, שילוב בעמודים עם היררכיית כותרות נכונה, הטמעת תמונות וקישורים פנימיים." },
-  { num: "05", title: "בדיקות והשקה", desc: "בדיקות רספונסיביות, טפסים, מהירות, אינדוקס, פתיחת האתר למנועי החיפוש." },
-  { num: "06", title: "תמיכה והדרכה", desc: "הדרכה פרטנית מסודרת כדי שתוכלו לתפעל את האתר והמערכת ללא תלות." },
+  { num: "01", title: "אפיון ממוקד", desc: "ראיון עומק, זיהוי מסרים, קהל יעד, מתחרים ויעדים עסקיים. מפת אתר ומבנה עמודים." },
+  { num: "02", title: "עיצוב UI מותאם אישית", desc: "מערכת צבעים, טיפוגרפיה, התאמות למותג וסקיצות למסכים מעוצבים." },
+  { num: "03", title: "פיתוח ובנייה מקצועית", desc: "בנייה מודולרית, ביצועים, אבטחה, SEO, נגישות וחיבורי טפסים." },
+  { num: "04", title: "הזנת תכנים", desc: "איסוף ומיפוי תכנים, שילוב בעמודים עם היררכיית כותרות נכונה." },
+  { num: "05", title: "בדיקות והשקה", desc: "בדיקות רספונסיביות, מהירות, אינדוקס ופתיחה למנועי חיפוש." },
+  { num: "06", title: "תמיכה והדרכה", desc: "הדרכה פרטנית כדי שתוכלו לתפעל את האתר ללא תלות." },
 ];
 
 const ProcessSection = () => {
   return (
-    <section id="process" className="section-padding bg-secondary">
+    <section id="process" className="section-padding">
       <div className="container mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-2 text-foreground">
-          תהליך בניית אתרים שמביא תוצאות
-        </h2>
-        <div className="w-16 h-1 bg-primary mx-auto mb-4" />
-        <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-14">
-          בקליקי מקפידים על עבודה מסודרת שמביאה תוצאה איכותית, מקצועית ויציבה לטווח ארוך.
-        </p>
+        <div className="text-center mb-14">
+          <p className="text-primary font-semibold text-sm mb-2 uppercase tracking-wider">איך זה עובד</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+            תהליך שמביא תוצאות
+          </h2>
+          <div className="w-16 h-1 bg-primary mx-auto mt-4" />
+        </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {steps.map((step) => (
-            <div key={step.num} className="flex gap-4 group">
-              <div className="shrink-0 w-14 h-14 rounded-full bg-primary/10 border-2 border-primary/30 flex items-center justify-center text-primary font-bold text-lg group-hover:bg-primary group-hover:text-primary-foreground transition-all">
-                {step.num}
+        <div className="relative max-w-3xl mx-auto">
+          {/* vertical line */}
+          <div className="absolute right-7 top-0 bottom-0 w-px bg-border hidden md:block" />
+
+          <div className="space-y-8">
+            {steps.map((step, i) => (
+              <div key={step.num} className="flex gap-6 group">
+                <div className="shrink-0 w-14 h-14 rounded-full bg-card border-2 border-border group-hover:border-primary group-hover:bg-primary flex items-center justify-center text-primary group-hover:text-white font-bold text-sm transition-all duration-300 relative z-10">
+                  {step.num}
+                </div>
+                <div className="bg-card border border-border/40 rounded-2xl p-5 flex-1 group-hover:border-primary/30 group-hover:shadow-md transition-all duration-300">
+                  <h4 className="font-bold text-base mb-1 text-foreground">{step.title}</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+                </div>
               </div>
-              <div>
-                <h4 className="font-bold text-lg mb-1 text-foreground">{step.title}</h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

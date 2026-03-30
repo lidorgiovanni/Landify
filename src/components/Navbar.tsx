@@ -1,69 +1,68 @@
-import { useState } from "react";
-import { Menu, X, Search } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navItems = [
-  { label: "השירותים שלנו", href: "#services" },
-  { label: "תיק עבודות", href: "#portfolio" },
-  { label: "התהליך שלנו", href: "#process" },
-  { label: "למה Landify?", href: "#benefits" },
-  { label: "לקוחות ממליצים", href: "#testimonials" },
-  { label: "צרו קשר", href: "#contact" },
+  { label: "שירותים", href: "#services" },
+  { label: "עבודות", href: "#portfolio" },
+  { label: "תהליך", href: "#process" },
+  { label: "למה אנחנו", href: "#benefits" },
+  { label: "המלצות", href: "#testimonials" },
 ];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-0 right-0 left-0 z-50 bg-navy/90 backdrop-blur-md">
+    <nav className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${scrolled ? "bg-navy/95 backdrop-blur-md shadow-lg" : "bg-transparent"}`}>
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
-        <a href="#" className="text-2xl font-bold text-primary">
-          ⬡ Landify
+        <a href="#" className="text-xl font-bold text-white flex items-center gap-2">
+          <span className="w-7 h-7 rounded-lg bg-primary flex items-center justify-center text-white text-xs font-black">L</span>
+          Landify
         </a>
 
-        <div className="hidden lg:flex items-center gap-6">
+        <div className="hidden lg:flex items-center bg-white/10 backdrop-blur-sm rounded-full px-2 py-1 gap-1">
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="text-sm text-primary-foreground/80 hover:text-primary transition-colors"
+              className="text-sm text-white/80 hover:text-white hover:bg-white/15 px-4 py-1.5 rounded-full transition-all"
             >
               {item.label}
             </a>
           ))}
         </div>
 
-        <div className="hidden lg:flex items-center gap-3">
-          <button className="text-primary-foreground/80 hover:text-primary transition-colors">
-            <Search size={18} />
-          </button>
-          <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90" asChild>
-            <a href="#contact">בניית אתר לעסק</a>
-          </Button>
-        </div>
+        <Button size="sm" className="hidden lg:flex bg-primary text-white hover:bg-primary/90 rounded-full px-5" asChild>
+          <a href="#contact">התחילו עכשיו</a>
+        </Button>
 
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden text-primary-foreground"
-        >
+        <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden text-white">
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {isOpen && (
-        <div className="lg:hidden bg-navy/95 backdrop-blur-md px-4 pb-4">
+        <div className="lg:hidden bg-navy/98 backdrop-blur-md px-4 pb-5 pt-2 border-t border-white/10">
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
               onClick={() => setIsOpen(false)}
-              className="block py-2 text-primary-foreground/80 hover:text-primary transition-colors"
+              className="block py-2.5 text-white/80 hover:text-primary transition-colors border-b border-white/5 text-sm"
             >
               {item.label}
             </a>
           ))}
-          <Button className="w-full mt-2 bg-primary text-primary-foreground" asChild>
-            <a href="#contact">בניית אתר לעסק</a>
+          <Button className="w-full mt-4 bg-primary text-white rounded-full" asChild>
+            <a href="#contact">התחילו עכשיו</a>
           </Button>
         </div>
       )}

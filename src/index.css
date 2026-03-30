@@ -7,40 +7,37 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 250 40% 10%;
+    --foreground: 194 100% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 250 40% 10%;
+    --card-foreground: 194 100% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 250 40% 10%;
+    --popover-foreground: 194 100% 10%;
 
-    /* violet/purple primary */
-    --primary: 258 90% 60%;
+    --primary: 184 97% 37%;
     --primary-foreground: 0 0% 100%;
 
-    /* Light warm sections */
-    --secondary: 250 20% 97%;
-    --secondary-foreground: 250 30% 12%;
+    --secondary: 200 10% 96%;
+    --secondary-foreground: 194 100% 10%;
 
-    --muted: 250 15% 94%;
-    --muted-foreground: 250 10% 45%;
+    --muted: 200 10% 94%;
+    --muted-foreground: 200 10% 45%;
 
-    --accent: 258 90% 60%;
+    --accent: 184 97% 37%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 250 15% 88%;
-    --input: 250 15% 88%;
-    --ring: 258 90% 60%;
+    --border: 200 10% 88%;
+    --input: 200 10% 88%;
+    --ring: 184 97% 37%;
 
     --radius: 0.75rem;
 
-    /* Dark navy/indigo */
-    --navy: 250 40% 10%;
-    --hero-overlay: 250 40% 8% / 0.60;
+    --navy: 194 100% 10%;
+    --hero-overlay: 194 100% 10% / 0.55;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 194 100% 10%;
@@ -73,11 +70,11 @@
   }
 
   .bg-navy {
-    background-color: hsl(250 40% 10%);
+    background-color: hsl(194 100% 10%);
   }
 
   .text-navy {
-    color: hsl(250 40% 10%);
+    color: hsl(194 100% 10%);
   }
 
   .glass-card {
@@ -85,11 +82,11 @@
   }
 
   .glass-card-dark {
-    @apply bg-[hsl(250_40%_13%)] border border-[hsl(250_30%_20%)] rounded-xl;
+    @apply bg-[hsl(194_100%_13%)] border border-[hsl(194_60%_20%)] rounded-xl;
   }
 
   .glow-border {
-    box-shadow: 0 0 20px -5px hsl(258 90% 60% / 0.3);
+    box-shadow: 0 0 20px -5px hsl(184 97% 37% / 0.25);
   }
 
   .section-padding {

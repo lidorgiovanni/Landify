@@ -1,41 +1,57 @@
-import { Monitor, Paintbrush, Cloud, Heart, GraduationCap, Search, Coins, Award } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 
 const benefits = [
-  { icon: Monitor, title: "מומחיות בבניית אתרים מתקדמים", desc: "אתרים מותאמים אישית, רספונסיביים ומקצועיים." },
-  { icon: Paintbrush, title: "עיצוב שמותאם לכם אישית", desc: "אתר שמדבר את השפה של העסק שלכם." },
-  { icon: Cloud, title: "אחסון ותחזוקה מקצועיים", desc: "שירות יציב ומהיר עם זמינות גבוהה." },
-  { icon: Heart, title: "שירות אישי ומחויבות מלאה", desc: "יחס חם, זמינות גבוהה ותמיכה לאורך זמן." },
-  { icon: GraduationCap, title: "הדרכה ותמיכה ללא תלות", desc: "ליווי אישי ונגישות מלאה גם אחרי ההשקה." },
-  { icon: Search, title: "קידום אורגני כבר מהבסיס", desc: "בנייה חכמה שמכינה את האתר ל-SEO מהיום הראשון." },
-  { icon: Coins, title: "מחירים הוגנים ואמינות", desc: "עלויות הוגנות ושקיפות מלאה, בלי הפתעות." },
-  { icon: Award, title: "ניסיון ומוניטין מוכחים", desc: "מעל 20 שנה בתחום עם עשרות לקוחות מרוצים." },
+  "עיצוב מותאם אישית לכל עסק",
+  "אחסון ותחזוקה מקצועיים",
+  "שירות אישי ומחויבות מלאה",
+  "הדרכה ותמיכה ללא תלות",
+  "קידום אורגני כבר מהבסיס",
+  "מחירים הוגנים ושקיפות מלאה",
+  "ניסיון ומוניטין מוכחים",
+  "זמינות גבוהה לאורך כל הדרך",
+];
+
+const stats = [
+  { num: "200+", label: "אתרים שנבנו" },
+  { num: "20+", label: "שנות ניסיון" },
+  { num: "98%", label: "לקוחות מרוצים" },
+  { num: "24/7", label: "תמיכה זמינה" },
 ];
 
 const BenefitsSection = () => {
   return (
     <section id="benefits" className="section-padding bg-navy text-primary-foreground">
       <div className="container mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-2">
-          בניית אתרים שהופכים <span className="text-primary">מבקרים</span> ללקוחות
-        </h2>
-        <div className="w-16 h-1 bg-primary mx-auto mb-4" />
-        <p className="text-primary-foreground/70 text-center max-w-3xl mx-auto mb-6">
-          <strong>ב-Landify מעצבים ובונים אתרים בהתאמה אישית – מאתרי תדמית ועד חנויות אונליין</strong> – עם שילוב מנצח של עיצוב מודרני, חוויית משתמש ופתרונות ניהול פשוטים ללא תלות.
-        </p>
-        <p className="text-primary-foreground/60 text-center max-w-3xl mx-auto mb-14 text-sm">
-          ב-Landify אין אותיות קטנות, אין מילים גבוהות ומפוצצות, יש תכלס! יש שירות אמין, אישי ומקצועי, עלויות הוגנות ובעיקר יש תוצאות!
-        </p>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {benefits.map((b) => (
-            <div key={b.title} className="text-center group">
-              <div className="w-16 h-16 rounded-2xl bg-primary/15 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/25 transition-colors">
-                <b.icon className="w-8 h-8 text-primary" strokeWidth={1.5} />
-              </div>
-              <h4 className="font-semibold mb-2 text-primary-foreground">{b.title}</h4>
-              <p className="text-sm text-primary-foreground/60">{b.desc}</p>
+        <div className="grid md:grid-cols-2 gap-16 items-center">
+          {/* Right - text */}
+          <div>
+            <p className="text-primary font-semibold text-sm mb-2 uppercase tracking-wider">למה לבחור בנו</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              בונים אתרים שהופכים{" "}
+              <span className="text-primary">מבקרים</span> ללקוחות
+            </h2>
+            <p className="text-primary-foreground/60 mb-8 leading-relaxed text-sm">
+              ב-Landify אין אותיות קטנות ואין הפתעות. יש שירות אמין, אישי ומקצועי, עלויות הוגנות ובעיקר — תוצאות.
+            </p>
+            <div className="grid grid-cols-1 gap-3">
+              {benefits.map((b) => (
+                <div key={b} className="flex items-center gap-3">
+                  <CheckCircle size={16} className="text-primary shrink-0" />
+                  <span className="text-primary-foreground/80 text-sm">{b}</span>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          {/* Left - stats grid */}
+          <div className="grid grid-cols-2 gap-4">
+            {stats.map((s) => (
+              <div key={s.label} className="bg-primary/10 border border-primary/20 rounded-2xl p-6 text-center hover:bg-primary/20 transition-colors">
+                <p className="text-4xl font-bold text-primary mb-1">{s.num}</p>
+                <p className="text-primary-foreground/60 text-sm">{s.label}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -1,44 +1,87 @@
-import { Star } from "lucide-react";
+import { Star, ArrowLeft, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
 
+const perks = ["עיצוב מותאם אישית", "SEO מובנה", "תמיכה שוטפת"];
+
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden">
       <img
         src={heroBg}
         alt="בניית אתרים מקצועית"
         className="absolute inset-0 w-full h-full object-cover"
-        width={1920}
-        height={1080}
       />
       <div className="absolute inset-0 bg-[hsl(var(--hero-overlay))]" />
 
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8 text-primary-foreground">
-          שתמשיכו לעשות את מה{" "}
-          <br />
-          שאתם אוהבים{" "}
-          <span className="text-primary">גם בדיגיטל!</span>
-        </h1>
-
-        <Button
-          size="lg"
-          variant="outline"
-          className="text-lg px-10 py-6 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all rounded-full"
-          asChild
-        >
-          <a href="#contact">בואו נבנה משהו ביחד 🚀</a>
-        </Button>
-
-        <div className="flex items-center justify-center gap-2 mt-6">
-          <span className="text-primary font-bold text-lg">4.9</span>
-          <div className="flex gap-0.5">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} size={18} className="fill-amber-400 text-amber-400" />
-            ))}
+      <div className="relative z-10 w-full px-4">
+        <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+          {/* Right - main text */}
+          <div>
+            <span className="inline-block bg-primary/20 text-primary border border-primary/30 text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
+              מעל 20 שנה בעולם הדיגיטל
+            </span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
+              האתר שלכם צריך{" "}
+              <span className="text-primary">לעבוד בשבילכם</span>{" "}
+              — לא להפך
+            </h1>
+            <p className="text-white/70 text-lg mb-8 leading-relaxed">
+              בונים אתרים שמביאים לקוחות. עיצוב חכם, מהירות גבוהה, SEO מובנה.
+            </p>
+            <div className="flex flex-wrap gap-3 mb-8">
+              {perks.map((p) => (
+                <span key={p} className="flex items-center gap-1.5 text-white/80 text-sm">
+                  <CheckCircle size={15} className="text-primary shrink-0" />
+                  {p}
+                </span>
+              ))}
+            </div>
+            <div className="flex gap-3 flex-wrap">
+              <Button
+                size="lg"
+                className="bg-primary text-white hover:bg-primary/90 rounded-full px-8 py-6 text-base font-bold"
+                asChild
+              >
+                <a href="#contact">בואו נדבר — חינם</a>
+              </Button>
+              <Button
+                size="lg"
+                variant="ghost"
+                className="text-white hover:text-primary rounded-full px-6 py-6 text-base"
+                asChild
+              >
+                <a href="#portfolio" className="flex items-center gap-2">
+                  לתיק העבודות <ArrowLeft size={16} />
+                </a>
+              </Button>
+            </div>
           </div>
-          <span className="text-primary-foreground/60 text-sm mr-2">powered by Google</span>
+
+          {/* Left - stats card */}
+          <div className="hidden md:flex justify-center">
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 w-72 text-center space-y-6">
+              <div>
+                <p className="text-5xl font-bold text-primary">200+</p>
+                <p className="text-white/70 text-sm mt-1">אתרים שנבנו</p>
+              </div>
+              <div className="w-full h-px bg-white/10" />
+              <div>
+                <div className="flex justify-center gap-0.5 mb-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={18} className="fill-amber-400 text-amber-400" />
+                  ))}
+                </div>
+                <p className="text-3xl font-bold text-white">4.9</p>
+                <p className="text-white/50 text-xs mt-1">דירוג Google</p>
+              </div>
+              <div className="w-full h-px bg-white/10" />
+              <div>
+                <p className="text-5xl font-bold text-primary">20+</p>
+                <p className="text-white/70 text-sm mt-1">שנות ניסיון</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
