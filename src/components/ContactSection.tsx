@@ -31,7 +31,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">טלפון</p>
-                <p className="font-semibold text-foreground" dir="ltr">050-123-4567</p>
+                <a href="https://wa.me/972543493564" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline" dir="ltr">054-3493564</a>
               </div>
             </div>
             <div className="flex items-center gap-4">
