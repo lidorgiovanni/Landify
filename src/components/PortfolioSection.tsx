@@ -1,61 +1,50 @@
-import React from "react";
-
-const thumb = (url: string) =>
-  `https://image.thum.io/get/width/800/crop/600/${url}`;
-
 const projects = [
-  { title: "בניית אתר לרשת מעונות", category: "אתר תדמית", url: "https://wolt.com", site: "wolt.com", img: thumb("https://wolt.com") },
-  { title: "אתר רב לשוני הפצת סרטים", category: "אתר קטלוגי", url: "https://yes.co.il", site: "yes.co.il", img: thumb("https://yes.co.il") },
-  { title: "אתר תדמית ושירותים", category: "אתר תדמית", url: "https://fiverr.com", site: "fiverr.com", img: thumb("https://fiverr.com") },
-  { title: "חנות אונליין מייבשי שיער", category: "חנות אונליין", url: "https://shein.com", site: "shein.com", img: thumb("https://shein.com") },
-  { title: "ORI רילוקיישן", category: "אתר תדמית", url: "https://airbnb.com", site: "airbnb.com", img: thumb("https://airbnb.com") },
-  { title: "חנות אונליין דגם", category: "חנות אונליין", url: "https://zara.com", site: "zara.com", img: thumb("https://zara.com") },
-  { title: "אתר למסעדות כרמים", category: "אתר מסעדה", url: "https://rest.co.il", site: "rest.co.il", img: thumb("https://rest.co.il") },
-  { title: "אתר DJ לאירועים", category: "אתר תדמית", url: "https://eventbrite.com", site: "eventbrite.com", img: thumb("https://eventbrite.com") },
-  { title: "אתר לחברה קבלנית", category: "אתר תדמית", url: "https://delek.co.il", site: "delek.co.il", img: thumb("https://delek.co.il") },
+  {
+    title: "בניית אתר לרשת מעונות",
+    category: "אתר תדמית",
+    img: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80",
+  },
+  {
+    title: "אתר רב לשוני הפצת סרטים",
+    category: "אתר קטלוגי",
+    img: "https://images.unsplash.com/photo-1536240478700-b869ad10e128?w=800&q=80",
+  },
+  {
+    title: "אתר תדמית ושירותים",
+    category: "אתר תדמית",
+    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+  },
+  {
+    title: "חנות אונליין מייבשי שיער",
+    category: "חנות אונליין",
+    img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80",
+  },
+  {
+    title: "ORI רילוקיישן",
+    category: "אתר תדמית",
+    img: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
+  },
+  {
+    title: "חנות אונליין אופנה",
+    category: "חנות אונליין",
+    img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80",
+  },
+  {
+    title: "אתר למסעדות כרמים",
+    category: "אתר מסעדה",
+    img: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+  },
+  {
+    title: "אתר DJ לאירועים",
+    category: "אתר תדמית",
+    img: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800&q=80",
+  },
+  {
+    title: "אתר לחברה קבלנית",
+    category: "אתר תדמית",
+    img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+  },
 ];
-
-const gradients = [
-  "from-primary/15 to-primary/5",
-  "from-sky-400/15 to-sky-400/5",
-  "from-teal-400/15 to-teal-400/5",
-  "from-cyan-400/15 to-cyan-400/5",
-  "from-emerald-400/15 to-emerald-400/5",
-  "from-blue-400/15 to-blue-400/5",
-  "from-indigo-400/15 to-indigo-400/5",
-  "from-primary/10 to-sky-400/5",
-  "from-teal-400/10 to-primary/5",
-];
-
-const ProjectCard = ({ project }: { project: typeof projects[0] }) => {
-  const [loaded, setLoaded] = React.useState(false);
-  return (
-    <a
-      href={project.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="rounded-xl overflow-hidden group cursor-pointer hover:shadow-xl transition-all duration-300 border border-border/40 block"
-    >
-      <div className="aspect-[4/3] relative overflow-hidden bg-muted">
-        {!loaded && <div className="absolute inset-0 animate-pulse bg-muted" />}
-        <img
-          src={project.img}
-          alt={project.title}
-          onLoad={() => setLoaded(true)}
-          className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 ${loaded ? "opacity-100" : "opacity-0"}`}
-        />
-        <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/75 transition-all duration-300 flex flex-col items-center justify-center gap-2">
-          <p className="text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity text-center px-3 text-sm md:text-base">{project.title}</p>
-          <span className="text-primary opacity-0 group-hover:opacity-100 transition-opacity text-xs bg-black/30 px-2 py-0.5 rounded-full">{project.site}</span>
-        </div>
-      </div>
-      <div className="px-3 py-2 bg-card">
-        <span className="text-xs text-muted-foreground">{project.category}</span>
-        <p className="text-sm font-medium text-foreground truncate">{project.title}</p>
-      </div>
-    </a>
-  );
-};
 
 const PortfolioSection = () => {
   return (
@@ -72,12 +61,31 @@ const PortfolioSection = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {projects.map((project) => (
-            <ProjectCard key={project.title} project={project} />
+            <div
+              key={project.title}
+              className="rounded-xl overflow-hidden group cursor-pointer hover:shadow-xl transition-all duration-300 border border-border/40"
+            >
+              <div className="aspect-[4/3] relative overflow-hidden bg-muted">
+                <img
+                  src={project.img}
+                  alt={project.title}
+                  loading="lazy"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/75 transition-all duration-300 flex flex-col items-center justify-center gap-2">
+                  <p className="text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity text-center px-3 text-sm md:text-base">{project.title}</p>
+                </div>
+              </div>
+              <div className="px-3 py-2 bg-card">
+                <span className="text-xs text-muted-foreground">{project.category}</span>
+                <p className="text-sm font-medium text-foreground truncate">{project.title}</p>
+              </div>
+            </div>
           ))}
         </div>
 
         <div className="text-center mt-10">
-          <a href="#" className="text-primary hover:underline font-semibold">לכל העבודות ←</a>
+          <a href="#contact" className="text-primary hover:underline font-semibold">רוצים אתר כזה? דברו איתנו ←</a>
         </div>
       </div>
     </section>

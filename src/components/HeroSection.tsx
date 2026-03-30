@@ -28,7 +28,7 @@ const HeroSection = () => {
           className="text-lg px-10 py-6 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all rounded-full"
           asChild
         >
-          <a href="#contact">קבעו שיחת ייעוץ</a>
+          <a href="#contact">בואו נבנה משהו ביחד 🚀</a>
         </Button>
 
         <div className="flex items-center justify-center gap-2 mt-6">
