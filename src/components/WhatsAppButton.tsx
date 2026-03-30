@@ -92,24 +92,7 @@ const WhatsAppButton = () => {
         </button>
       </div>
 
-      {/* Mobile sticky bottom CTA */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-navy/95 backdrop-blur-md border-t border-white/10 px-4 py-3 flex gap-3">
-        <a
-          href={`https://wa.me/${PHONE}?text=${encodeURIComponent(messages[0].text)}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex-1 flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold text-sm py-3 rounded-xl transition-colors"
-        >
-          <WaIcon className="w-4 h-4 fill-white" />
-          וואטסאפ
-        </a>
-        <a
-          href="#contact"
-          className="flex-1 flex items-center justify-center bg-primary hover:bg-primary/90 text-white font-bold text-sm py-3 rounded-xl transition-colors"
-        >
-          השאירו פרטים
-        </a>
-      </div>
+      {/* Mobile sticky bottom CTA — removed */}
     </>
   );
 };
