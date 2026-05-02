@@ -44,7 +44,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-xs text-primary-foreground/40">אימייל</p>
-                  <p className="font-semibold text-primary-foreground">info@clicky.co.il</p>
+                  <p className="font-semibold text-primary-foreground">landify@gmail.com</p>
                 </div>
               </div>
             </div>

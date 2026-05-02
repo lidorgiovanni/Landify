@@ -41,7 +41,7 @@ const Footer = () => {
                 </svg>
                 054-349-5645
               </a>
-              <p className="text-white/40 text-sm">info@clicky.co.il</p>
+              <p className="text-white/40 text-sm">landify@gmail.com</p>
             </div>
           </div>
         </div>
