@@ -28,7 +28,7 @@ const PortfolioSection = () => {
           {categories.map((cat) => (
             <button
               key={cat}
-              onClick={() => setActive(cat)}
+              onClick={() => setActive(active === cat && cat !== "הכל" ? "הכל" : cat)}
               className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
                 active === cat
                   ? "bg-primary text-white shadow-md shadow-primary/20"
@@ -40,14 +40,14 @@ const PortfolioSection = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {filtered.map((project, i) => (
             <a
               key={project.title}
               href={(project as any).url}
               target="_blank"
               rel="noopener noreferrer"
-              className="reveal rounded-2xl overflow-hidden group cursor-pointer hover:shadow-xl transition-all duration-300 border border-border/40 hover:-translate-y-1"
+              className="rounded-2xl overflow-hidden group cursor-pointer hover:shadow-xl transition-all duration-300 border border-border/40 hover:-translate-y-1"
             >
               <div className="aspect-[4/3] relative overflow-hidden bg-muted">
                 <img
