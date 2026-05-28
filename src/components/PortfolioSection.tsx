@@ -4,7 +4,7 @@ const FALLBACK = "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w
 
 const projects = [
   { title: "Ofek Terem Nails", category: "אתר קביעת תורים", img: "/ofek-nails.png", url: "https://ofekteremnailss.vercel.app/" },
-  { title: "Lian Rebekah Nails", category: "אתר קביעת תורים", img: "/lian-nails.png", url: "https://lianjovany6680-lgtm.github.io/lianrebekahnails/" },
+  { title: "Lian Rebekah Nails", category: "אתר קביעת תורים", img: "/lian-nails.png", url: "https://lianrebekahnails.vercel.app/" },
   { title: "Airflow Matan", category: "דף נחיתה", img: "/airflow-matan.png", url: "https://airflowmatan.netlify.app/" },
 ];
 
