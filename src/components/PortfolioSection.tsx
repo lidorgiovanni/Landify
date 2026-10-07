@@ -6,7 +6,7 @@ const projects = [
   {
     title: "THE CLUB",
     category: "חנות אונליין",
-    img: "https://theclub-inky.vercel.app/LOGO.jpeg",
+    img: "https://image.thum.io/get/width/1200/crop/900/noanimate/https://theclub-pets.co.il",
     url: "https://theclub-pets.co.il",
   },
   { title: "Ofek Terem Nails", category: "אתר קביעת תורים", img: "/ofek-nails.png", url: "https://ofekteremnailss.vercel.app/" },
