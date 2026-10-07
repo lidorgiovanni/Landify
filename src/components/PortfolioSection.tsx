@@ -3,12 +3,18 @@ import { useState } from "react";
 const FALLBACK = "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80";
 
 const projects = [
+  {
+    title: "THE CLUB",
+    category: "חנות אונליין",
+    img: "https://theclub-inky.vercel.app/LOGO.jpeg",
+    url: "https://theclub-pets.co.il",
+  },
   { title: "Ofek Terem Nails", category: "אתר קביעת תורים", img: "/ofek-nails.png", url: "https://ofekteremnailss.vercel.app/" },
   { title: "Lian Rebekah Nails", category: "אתר קביעת תורים", img: "/lian-nails.png", url: "https://lianrebekahnails.vercel.app/" },
   { title: "Airflow Matan", category: "דף נחיתה", img: "/airflow-matan.png", url: "https://airflowmatan.netlify.app/" },
 ];
 
-const categories = ["הכל", "דף נחיתה", "אתר קביעת תורים"];
+const categories = ["הכל", "חנות אונליין", "דף נחיתה", "אתר קביעת תורים"];
 
 const PortfolioSection = () => {
   const [active, setActive] = useState("הכל");
