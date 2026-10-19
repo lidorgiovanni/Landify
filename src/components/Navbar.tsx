@@ -4,11 +4,10 @@ import { Button } from "@/components/ui/button";
 
 const navItems = [
   { label: "שירותים", href: "#services" },
-  { label: "דף נחיתה", href: "#landing" },
+  { label: "למה דף נחיתה", href: "#landing" },
   { label: "עבודות", href: "#portfolio" },
   { label: "תהליך", href: "#process" },
-  { label: "מחירים", href: "#pricing" },
-  { label: "המלצות", href: "#testimonials" },
+  { label: "שאלות", href: "#faq" },
 ];
 
 const Navbar = () => {
@@ -35,18 +34,18 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${scrolled ? "bg-navy/95 backdrop-blur-md shadow-lg" : "bg-transparent"}`}>
-      <div className="container mx-auto flex items-center justify-between h-16 px-4">
-        <a href="#" className="text-xl font-bold text-white flex items-center gap-2">
-          <span className="w-7 h-7 rounded-lg bg-primary flex items-center justify-center text-white text-xs font-black animate-pulse-ring">L</span>
+      <div className="container mx-auto flex h-[72px] items-center justify-between px-4 md:px-8">
+        <a href="#" className="flex items-center gap-2 text-xl font-bold text-white" aria-label="LANDIFY — לדף הבית">
+          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary text-xs font-black text-white">L</span>
           Landify
         </a>
 
-        <div className="hidden lg:flex items-center bg-white/10 backdrop-blur-sm rounded-full px-2 py-1 gap-1">
+        <div className="hidden items-center gap-1 rounded-full border border-white/10 bg-white/[0.07] px-2 py-1 backdrop-blur-sm lg:flex">
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className={`text-sm px-4 py-1.5 rounded-full transition-all ${
+              className={`rounded-full px-4 py-1.5 text-sm transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white ${
                 active === item.href
                   ? "bg-primary text-white font-semibold"
                   : "text-white/80 hover:text-white hover:bg-white/15"
@@ -57,17 +56,23 @@ const Navbar = () => {
           ))}
         </div>
 
-        <Button size="sm" className="hidden lg:flex bg-primary text-white hover:bg-primary/90 rounded-full px-5 shadow-md shadow-primary/30" asChild>
-          <a href="#contact">התחילו עכשיו</a>
+        <Button size="sm" className="hidden rounded-full bg-primary px-5 text-white shadow-md shadow-primary/30 hover:bg-primary/90 lg:flex" asChild>
+          <a href="#contact">שיחת היכרות</a>
         </Button>
 
-        <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden text-white p-1">
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="p-2 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white lg:hidden"
+          aria-expanded={isOpen}
+          aria-controls="mobile-navigation"
+          aria-label={isOpen ? "סגור תפריט" : "פתח תפריט"}
+        >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {isOpen && (
-        <div className="lg:hidden bg-navy/98 backdrop-blur-md px-4 pb-5 pt-2 border-t border-white/10">
+        <div id="mobile-navigation" className="border-t border-white/10 bg-navy/98 px-4 pb-5 pt-2 backdrop-blur-md lg:hidden">
           {navItems.map((item) => (
             <a
               key={item.href}
@@ -80,8 +85,8 @@ const Navbar = () => {
               {item.label}
             </a>
           ))}
-          <Button className="w-full mt-4 bg-primary text-white rounded-full" asChild>
-            <a href="#contact">התחילו עכשיו</a>
+          <Button className="mt-4 w-full rounded-full bg-primary text-white" asChild>
+            <a href="#contact" onClick={() => setIsOpen(false)}>שיחת היכרות</a>
           </Button>
         </div>
       )}
@@ -90,3 +95,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

@@ -2,7 +2,14 @@ import { useState } from "react";
 
 const FALLBACK = "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80";
 
-const projects = [
+type Project = {
+  title: string;
+  category: string;
+  img: string;
+  url: string;
+};
+
+const projects: Project[] = [
   {
     title: "THE CLUB",
     category: "חנות אונליין",
@@ -24,10 +31,10 @@ const PortfolioSection = () => {
     <section id="portfolio" className="section-padding bg-secondary">
       <div className="container mx-auto">
         <div className="reveal text-center mb-10">
-          <p className="text-primary font-semibold text-sm mb-2 uppercase tracking-wider">תיק עבודות</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">פרויקטים נבחרים</h2>
+          <p className="mb-2 text-xs font-bold tracking-[0.14em] text-primary">SELECTED WORK</p>
+          <h2 className="mb-4 text-3xl font-semibold tracking-[-0.03em] text-foreground md:text-5xl">פרויקטים נבחרים</h2>
           <p className="text-muted-foreground max-w-xl mx-auto text-sm">
-            עיצוב בהתאמה אישית שמספר את הסיפור שלכם + SEO שגורם לגוגל להתאהב.
+            דוגמאות לאתרים ודפי נחיתה שנבנו עבור צרכים שונים — ממכירה ועד קביעת תורים.
           </p>
         </div>
 
@@ -51,7 +58,7 @@ const PortfolioSection = () => {
           {filtered.map((project, i) => (
             <a
               key={project.title}
-              href={(project as any).url}
+              href={project.url}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-2xl overflow-hidden group cursor-pointer hover:shadow-xl transition-all duration-300 border border-border/40 hover:-translate-y-1"
@@ -88,4 +95,5 @@ const PortfolioSection = () => {
 };
 
 export default PortfolioSection;
+
 

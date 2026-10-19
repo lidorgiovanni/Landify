@@ -1,41 +1,32 @@
 const steps = [
-  { num: "01", title: "אפיון ממוקד", desc: "ראיון עומק, זיהוי מסרים, קהל יעד, מתחרים ויעדים עסקיים. מפת אתר ומבנה עמודים." },
-  { num: "02", title: "עיצוב UI מותאם אישית", desc: "מערכת צבעים, טיפוגרפיה, התאמות למותג וסקיצות למסכים מעוצבים." },
-  { num: "03", title: "פיתוח ובנייה מקצועית", desc: "בנייה מודולרית, ביצועים, אבטחה, SEO, נגישות וחיבורי טפסים." },
-  { num: "04", title: "הזנת תכנים", desc: "איסוף ומיפוי תכנים, שילוב בעמודים עם היררכיית כותרות נכונה." },
-  { num: "05", title: "בדיקות והשקה", desc: "בדיקות רספונסיביות, מהירות, אינדוקס ופתיחה למנועי חיפוש." },
-  { num: "06", title: "תמיכה והדרכה", desc: "הדרכה פרטנית כדי שתוכלו לתפעל את האתר ללא תלות." },
+  { num: "01", title: "מחדדים את המטרה", desc: "מזהים למי האתר מדבר, מה חשוב לומר ומהו הצעד שאנחנו רוצים שיקרה." },
+  { num: "02", title: "מעצבים ובונים", desc: "מתרגמים את המותג למסכים נקיים, עם היררכיה נכונה וחוויית מובייל מדויקת." },
+  { num: "03", title: "בודקים ומשיקים", desc: "עוברים יחד על התוצאה, בודקים פניות ומחברים מדידה לפני שמתחילים להזרים תנועה." },
 ];
 
-const ProcessSection = () => {
-  return (
-    <section id="process" className="pt-16 md:pt-20 pb-10 md:pb-14 px-4 md:px-8">
-      <div className="container mx-auto">
-        <div className="reveal text-center mb-14">
-          <p className="text-primary font-semibold text-sm mb-2 uppercase tracking-wider">איך זה עובד</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">תהליך שמביא תוצאות</h2>
-          <div className="w-16 h-1 bg-primary mx-auto mt-4" />
+const ProcessSection = () => (
+  <section id="process" className="section-padding bg-background">
+    <div className="container mx-auto">
+      <div className="reveal mb-12 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+        <div>
+          <p className="mb-3 text-xs font-bold tracking-[0.14em] text-primary">HOW WE WORK</p>
+          <h2 className="text-3xl font-semibold tracking-[-0.03em] text-foreground md:text-5xl">תהליך קצר. החלטות נכונות.</h2>
         </div>
-
-        <div className="relative max-w-3xl mx-auto">
-          <div className="absolute left-7 top-0 bottom-0 w-px bg-border hidden md:block" />
-          <div className="space-y-6">
-            {steps.map((step, i) => (
-              <div key={step.num} className={`reveal reveal-delay-${Math.min(i % 4 + 1, 4)} flex gap-6 group`}>
-                <div className="shrink-0 w-14 h-14 rounded-full bg-card border-2 border-border group-hover:border-primary group-hover:bg-primary flex items-center justify-center text-primary group-hover:text-white font-bold text-sm transition-all duration-300 relative z-10 animate-pulse-ring-on-hover">
-                  {step.num}
-                </div>
-                <div className="bg-card border border-border/40 rounded-2xl p-5 flex-1 group-hover:border-primary/40 group-hover:shadow-lg group-hover:-translate-y-0.5 transition-all duration-300">
-                  <h4 className="font-bold text-base mb-1 text-foreground">{step.title}</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        <p className="max-w-sm text-sm leading-7 text-muted-foreground">שקיפות לאורך הדרך, בלי להעמיס שלבים שלא מקדמים את האתר.</p>
       </div>
-    </section>
-  );
-};
+
+      <ol className="grid gap-4 md:grid-cols-3">
+        {steps.map((step, index) => (
+          <li key={step.num} className={"reveal reveal-delay-" + (index + 1) + " rounded-[1.5rem] border border-border/70 bg-card p-7"}>
+            <span className="text-sm font-bold tracking-[0.16em] text-primary">{step.num}</span>
+            <h3 className="mt-12 text-xl font-semibold text-foreground">{step.title}</h3>
+            <p className="mt-3 text-sm leading-7 text-muted-foreground">{step.desc}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+);
 
 export default ProcessSection;
+
