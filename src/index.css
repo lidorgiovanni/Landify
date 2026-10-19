@@ -63,10 +63,6 @@
   body {
     @apply bg-background text-foreground font-heebo;
   }
-
-  ::selection {
-    background: hsl(184 97% 37% / 0.22);
-  }
 }
 
 @layer utilities {
@@ -96,11 +92,6 @@
 
   .section-padding {
     @apply py-16 md:py-20 px-4 md:px-8;
-  }
-
-  .hero-media {
-    transform: scale(1.035);
-    transform-origin: center;
   }
 
   /* marquee track — forced LTR so RTL page doesn't reverse direction */
@@ -208,41 +199,3 @@
   .reveal-delay-3 { transition-delay: 0.24s; }
   .reveal-delay-4 { transition-delay: 0.32s; }
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .hero-media {
-    animation: hero-drift 16s ease-in-out infinite alternate;
-  }
-}
-
-@keyframes hero-drift {
-  from { transform: scale(1.035) translate3d(0, 0, 0); }
-  to { transform: scale(1.08) translate3d(-1%, -0.7%, 0); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
-  }
-
-  .hero-media {
-    transform: none;
-  }
-
-  .reveal,
-  .reveal-left,
-  .reveal-right {
-    opacity: 1;
-    transform: none;
-  }
-}
-
