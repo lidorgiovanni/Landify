@@ -1,71 +1,59 @@
-import { Globe, ShoppingCart, Server, Wrench, Search, Palette, Bot, PenTool, Sparkles, Headphones } from "lucide-react";
+import { Globe2, LayoutTemplate, ShoppingBag } from "lucide-react";
 
-const mainServices = [
-  { icon: Globe, title: "בניית אתרים מותאמת אישית", description: "אתרים מקצועיים בהתאמה מלאה לעסק שלך – עיצוב רספונסיבי, מהירות גבוהה, חוויית משתמש מנצחת וניהול תוכן פשוט ועצמאי.", tag: "הכי פופולרי" },
-  { icon: ShoppingCart, title: "בניית חנות אונליין", description: "פתרון מסחר אלקטרוני מלא – ניהול מוצרים, תשלומים מאובטחים, חוויית קנייה חלקה ועיצוב שממיר גולשים ללקוחות.", tag: null },
-  { icon: Server, title: "אחסון ותשתית מקצועית", description: "שרתי LiteSpeed מהירים ומאובטחים, פנל ניהול נוח, גיבויים אוטומטיים, SSL ותיבות דוא\"ל עסקיות.", tag: null },
-  { icon: Wrench, title: "תחזוקה ותמיכה שוטפת", description: "עדכונים שוטפים, ניטור ביצועים, תמיכה טכנית זמינה ושמירה על האתר שלך בריא, מהיר ומאובטח לאורך זמן.", tag: null },
+const services = [
+  {
+    icon: Globe2,
+    title: "אתר תדמית",
+    description: "אתר מדויק שמציג את העסק, בונה אמון ומוביל את המבקר לצעד הבא.",
+    detail: "לעסקים שרוצים נוכחות דיגיטלית ברורה ומקצועית.",
+  },
+  {
+    icon: LayoutTemplate,
+    title: "דף נחיתה",
+    description: "עמוד ממוקד לקמפיין, שירות או מוצר — עם מסר חד וקריאה אחת לפעולה.",
+    detail: "מתאים לקידום ממומן, השקות ואיסוף פניות.",
+  },
+  {
+    icon: ShoppingBag,
+    title: "חנות אונליין",
+    description: "חוויית קנייה נעימה שמקלה על הלקוחות להבין, לבחור ולבצע רכישה.",
+    detail: "למותגים שרוצים למכור בצורה מסודרת וברורה.",
+  },
 ];
 
-const extras = [
-  { icon: Search, title: "קידום SEO" },
-  { icon: Palette, title: "עיצוב UI/UX" },
-  { icon: Bot, title: "אוטומציות" },
-  { icon: Sparkles, title: "סטודיו AI" },
-  { icon: PenTool, title: "תוכן AI" },
-  { icon: Headphones, title: "הדרכה אישית" },
-];
+const delayClasses = ["reveal-delay-1", "reveal-delay-2", "reveal-delay-3"];
 
-const ServicesSection = () => {
-  return (
-    <section id="services" className="pt-16 md:pt-20 pb-0 px-4 md:px-8 bg-secondary">
-      <div className="container mx-auto">
-        <div className="reveal flex flex-col md:flex-row md:items-end md:justify-between mb-14 gap-4">
-          <div>
-            <p className="text-primary font-semibold text-sm mb-2 uppercase tracking-wider">מה אנחנו עושים</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">הכל תחת קורת גג אחת</h2>
-          </div>
-          <p className="text-muted-foreground max-w-sm text-sm leading-relaxed">
-            מעל 20 שנה ניסיון מוכח. Landify – הפתרון הדיגיטלי המלא לעסק שלך.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-5 mb-12">
-          {mainServices.map((service, i) => (
-            <div
-              key={service.title}
-              className={`reveal reveal-delay-${i + 1} bg-card rounded-2xl p-6 flex gap-5 hover:shadow-lg hover:glow-border transition-all duration-300 group border border-border/40 relative overflow-hidden`}
-            >
-              {service.tag && (
-                <span className="absolute top-4 left-4 text-xs bg-primary text-white px-2.5 py-1 rounded-full font-semibold">
-                  {service.tag}
-                </span>
-              )}
-              <div className="shrink-0 w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
-                <service.icon className="w-7 h-7 text-primary group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
-              </div>
-              <div className={service.tag ? "pt-5" : ""}>
-                <h3 className="text-base font-bold mb-2 text-foreground">{service.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{service.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="reveal bg-card border border-border/40 rounded-2xl p-6">
-          <p className="text-sm font-semibold text-muted-foreground mb-4 text-center">שירותים נוספים</p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {extras.map((e) => (
-              <div key={e.title} className="flex items-center gap-2 bg-secondary px-4 py-2 rounded-full text-sm font-medium text-foreground hover:bg-primary hover:text-white transition-all duration-200 cursor-pointer">
-                <e.icon size={14} />
-                {e.title}
-              </div>
-            ))}
-          </div>
-        </div>
+const ServicesSection = () => (
+  <section id="services" className="section-padding bg-secondary">
+    <div className="container mx-auto">
+      <div className="reveal mb-12 max-w-2xl">
+        <p className="mb-3 text-xs font-bold tracking-[0.14em] text-primary">WHAT WE BUILD</p>
+        <h2 className="text-3xl font-semibold tracking-[-0.03em] text-foreground md:text-5xl">
+          פחות רעש. יותר כוונה.
+        </h2>
+        <p className="mt-5 max-w-xl text-base leading-8 text-muted-foreground">
+          כל פרויקט מתחיל בשאלה פשוטה: מה אנחנו רוצים שהאדם הנכון יבין ויעשה כשהוא מגיע לכאן?
+        </p>
       </div>
-    </section>
-  );
-};
+
+      <div className="grid gap-4 md:grid-cols-3">
+        {services.map((service, index) => (
+          <article
+            key={service.title}
+            className={"reveal " + delayClasses[index] + " group rounded-[1.5rem] border border-border/70 bg-card p-7 transition duration-300 hover:-translate-y-1 hover:border-primary/35 hover:shadow-xl hover:shadow-foreground/[0.06]"}
+          >
+            <div className="mb-10 flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-white">
+              <service.icon size={21} strokeWidth={1.75} aria-hidden="true" />
+            </div>
+            <h3 className="text-xl font-semibold text-foreground">{service.title}</h3>
+            <p className="mt-3 text-sm leading-7 text-muted-foreground">{service.description}</p>
+            <p className="mt-7 border-t border-border/70 pt-4 text-xs font-medium leading-6 text-foreground/70">{service.detail}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+);
 
 export default ServicesSection;
+

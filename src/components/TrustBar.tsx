@@ -1,22 +1,23 @@
 const items = [
-  "✓ מעל 200 אתרים שנבנו",
-  "✓ דירוג 4.9 בגוגל",
-  "✓ מסירה תוך 5 ימים",
-  "✓ תמיכה 24/7",
-  "✓ ללא עלויות נסתרות",
-  "✓ 20+ שנות ניסיון",
+  "אתרי תדמית",
+  "דפי נחיתה",
+  "חנויות אונליין",
+  "חוויית משתמש",
+  "מסלול פנייה ברור",
 ];
 
 const TrustBar = () => (
-  <div className="bg-primary/10 border-y border-primary/20 py-3">
-    <div className="marquee-wrapper">
-      <div className="marquee-track text-sm font-medium text-primary whitespace-nowrap">
-        {[...items, ...items, ...items].map((item, i) => (
-          <span key={i} className="shrink-0 px-6">{item}</span>
-        ))}
-      </div>
+  <div className="border-y border-primary/15 bg-primary/[0.06] py-4">
+    <div className="container mx-auto flex flex-wrap items-center justify-center gap-x-8 gap-y-3 px-4 text-xs font-semibold tracking-[0.08em] text-foreground/70 sm:text-sm">
+      {items.map((item) => (
+        <span key={item} className="flex items-center gap-2">
+          <span className="h-1.5 w-1.5 rounded-full bg-primary" aria-hidden="true" />
+          {item}
+        </span>
+      ))}
     </div>
   </div>
 );
 
 export default TrustBar;
+

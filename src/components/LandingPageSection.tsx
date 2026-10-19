@@ -1,71 +1,43 @@
-import { Zap, Target, BarChart2, MousePointerClick, Clock, ShieldCheck } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { BarChart3, MessageCircleMore, MousePointer2, Smartphone } from "lucide-react";
 
 const features = [
-  { icon: Target, title: "מסר ממוקד", desc: "דף אחד, מסר אחד, פעולה אחת. ללא הסחות דעת — רק המרות." },
-  { icon: Zap, title: "טעינה בשנייה", desc: "דפי נחיתה מהירים במיוחד — גוגל אוהב, הלקוח נשאר." },
-  { icon: MousePointerClick, title: "CTA חזק", desc: "כפתורי קריאה לפעולה שמניעים את הגולש לפנות אליכם." },
-  { icon: BarChart2, title: "מחובר לאנליטיקס", desc: "Google Analytics, Pixel ו-Conversion Tracking מובנים." },
-  { icon: Clock, title: "מוכן תוך 5 ימים", desc: "תהליך מהיר ויעיל — מאפיון ועד השקה בפחות משבוע." },
-  { icon: ShieldCheck, title: "A/B Testing מוכן", desc: "בנוי לבדיקות ואופטימיזציה מתמשכת לשיפור ההמרות." },
+  { icon: MousePointer2, title: "פעולה אחת ברורה", text: "הגולש מבין מיד מה הצעד הבא — להשאיר פרטים, לקבוע שיחה או לפתוח וואטסאפ." },
+  { icon: Smartphone, title: "קודם כל מובייל", text: "המסר, הכפתורים והטופס נבנים כך שיהיו פשוטים ונוחים גם מהטלפון." },
+  { icon: MessageCircleMore, title: "שיחה במקום מבוי סתום", text: "מסלול פנייה אמיתי שמכין הודעה בוואטסאפ — בלי הבטחות על פנייה שנשלחה." },
+  { icon: BarChart3, title: "מוכנים למדוד", text: "אפשר לחבר Google Analytics ואירועי לידים כדי לדעת מה עובד לפני שמגדילים תקציב." },
 ];
 
-const LandingPageSection = () => {
-  return (
-    <section id="landing" className="pt-10 md:pt-14 pb-16 md:pb-20 px-4 md:px-8 bg-secondary">
-      <div className="container mx-auto">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          {/* Right - text */}
-          <div className="reveal-right">
-            <p className="text-primary font-semibold text-sm mb-2 uppercase tracking-wider">דפי נחיתה</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              דף נחיתה שממיר —<br />
-              <span className="text-primary">לא רק נראה יפה</span>
-            </h2>
-            <p className="text-muted-foreground mb-6 leading-relaxed text-sm">
-              דף נחיתה מקצועי הוא הכלי הכי חזק לקמפיין פרסומי. בונים אותו נכון מהיום הראשון — עם מסר חד, עיצוב ממיר ומדידה מלאה.
-            </p>
-            <div className="bg-card border border-border/40 rounded-2xl p-5 mb-6">
-              <p className="text-sm font-bold text-foreground mb-3">מה כלול בדף נחיתה:</p>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                {["עיצוב מותאם למותג ולקמפיין", "טופס לידים / כפתור וואטסאפ", "חיבור ל-Google Analytics & Pixel", "גרסה מובייל מושלמת", "SSL + אחסון מהיר", "מסירה תוך 5 ימי עסקים"].map((item) => (
-                  <li key={item} className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="flex items-center gap-4 mb-6">
-              <div className="bg-primary/10 border border-primary/20 rounded-2xl px-5 py-3 text-center">
-                <p className="text-2xl font-bold text-primary">₪790</p>
-                <p className="text-xs text-muted-foreground">מחיר התחלתי</p>
-              </div>
-              <div className="text-sm text-muted-foreground leading-relaxed">
-                מחיר קבוע, חד פעמי.<br />ללא דמי תחזוקה חובה.  
-              </div>
-            </div>
-            <Button className="bg-primary text-white hover:bg-primary/90 rounded-full px-8 font-bold shadow-md shadow-primary/20" asChild>
-              <a href="#contact">קבלו הצעת מחיר לדף נחיתה</a>
-            </Button>
-          </div>
-
-          {/* Left - feature cards */}
-          <div className="reveal-left grid grid-cols-2 gap-4">
-            {features.map((f) => (
-              <div key={f.title} className="bg-card border border-border/40 rounded-2xl p-4 hover:border-primary/40 hover:shadow-md transition-all group">
-                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-3 group-hover:bg-primary transition-colors">
-                  <f.icon size={18} className="text-primary group-hover:text-white transition-colors" />
-                </div>
-                <p className="font-bold text-sm text-foreground mb-1">{f.title}</p>
-                <p className="text-xs text-muted-foreground leading-relaxed">{f.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+const LandingPageSection = () => (
+  <section id="landing" className="section-padding border-y border-border/60 bg-background">
+    <div className="container mx-auto grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+      <div className="reveal-right">
+        <p className="mb-3 text-xs font-bold tracking-[0.14em] text-primary">FOR PAID CAMPAIGNS</p>
+        <h2 className="max-w-md text-3xl font-semibold leading-tight tracking-[-0.035em] text-foreground md:text-5xl">
+          פרסום טוב מתחיל בעמוד שלא מבזבז את הקליק.
+        </h2>
+        <p className="mt-6 max-w-lg text-base leading-8 text-muted-foreground">
+          קמפיין בגוגל יכול להביא אנשים רלוונטיים, אבל האתר צריך להמשיך את אותה הבטחה: מסר עקבי, מהירות, הוכחה אמינה ודרך קצרה ליצור קשר.
+        </p>
+        <a
+          href="#contact"
+          className="mt-8 inline-flex rounded-full border border-foreground px-5 py-3 text-sm font-bold text-foreground transition hover:bg-foreground hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+        >
+          להכין דף לקמפיין
+        </a>
       </div>
-    </section>
-  );
-};
+
+      <div className="reveal-left grid gap-3 sm:grid-cols-2">
+        {features.map((feature) => (
+          <article key={feature.title} className="rounded-2xl border border-border/70 bg-secondary/55 p-5">
+            <feature.icon className="mb-7 text-primary" size={21} strokeWidth={1.75} aria-hidden="true" />
+            <h3 className="font-semibold text-foreground">{feature.title}</h3>
+            <p className="mt-2 text-sm leading-7 text-muted-foreground">{feature.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+);
 
 export default LandingPageSection;
+
